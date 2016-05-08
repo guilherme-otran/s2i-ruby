@@ -1,0 +1,21 @@
+{
+   "kind": "ImageStream",
+   "apiVersion": "v1",
+   "metadata": {
+     "name": "ruby-23-centos7"
+   },
+   "spec": {
+       "dockerImageRepository": "guilhermeotran/ruby23centos7:latest",
+       "tags": [
+               {
+                  "name": "latest",
+                  "annotations": {
+                     "description": "Ruby 2.3 STI image",
+                     "tags": "builder,ruby",
+                     "supports": "ruby",
+                     "version": "1.0"
+                  }
+               }
+            ]
+   }
+}
