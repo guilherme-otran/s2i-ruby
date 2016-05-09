@@ -16,6 +16,8 @@ LABEL summary="Platform for building and running Ruby 2.3 applications" \
       io.openshift.tags="builder,ruby,ruby23,rh-ruby23"
 
 RUN yum install -y centos-release-scl && \
+    yum install -y centos-release-scl-rh && \
+    yum-config-manager --enable centos-sclo-rh-testing && \
     INSTALL_PKGS="rh-ruby23 rh-ruby23-ruby-devel rh-ruby23-rubygem-rake rh-ruby23-rubygem-bundler rh-nodejs4" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && rpm -V $INSTALL_PKGS && \
     yum clean all -y
